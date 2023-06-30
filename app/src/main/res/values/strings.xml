@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">AboutMe</string>
+    <string name="about_me">Sobre mí</string>
+    <string name="lorem">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
+    <string name="experience">Experiencia</string>
+    <string name="my_networks">Mis redes</string>
+    <string name="knowledge">Conocimientos</string>
+    <string name="my_img">foto mia</string>
 </resources>
