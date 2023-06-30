@@ -34,7 +34,6 @@ public class MisRedesActivity extends AppCompatActivity {
         {
             Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+56933855169"));
             startActivity(intent);
-
         });
 
         binding.btnEmail.setOnClickListener(v -> sendEmail());
@@ -44,7 +43,7 @@ public class MisRedesActivity extends AppCompatActivity {
     protected void sendEmail() {
         String[] TO = {"gencina2@gmail.com"};
         String[] CC = {""};
-        Intent emailIntent = new Intent(Intent.ACTION_SEND);
+        Intent emailIntent = new Intent(Intent.ACTION_SENDTO);
 
         emailIntent.setType("text/plain");
         emailIntent.setData(Uri.parse("mailto:"));
