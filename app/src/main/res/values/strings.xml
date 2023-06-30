@@ -6,4 +6,9 @@
     <string name="my_networks">Mis redes</string>
     <string name="knowledge">Conocimientos</string>
     <string name="my_img">foto mia</string>
+    <string name="linkedin">Linkedin</string>
+    <string name="whatsapp">Whatsapp</string>
+    <string name="make_one_question">Hazme una pregunta</string>
+    <string name="send_email">Enviar email</string>
+    <string name="callme">Llámame</string>
 </resources>

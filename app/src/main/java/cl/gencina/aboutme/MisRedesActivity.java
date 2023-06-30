@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.widget.Toast;
 
-import cl.gencina.aboutme.databinding.ActivityMainBinding;
 import cl.gencina.aboutme.databinding.ActivityMisRedesBinding;
 
 public class MisRedesActivity extends AppCompatActivity {
@@ -28,8 +26,15 @@ public class MisRedesActivity extends AppCompatActivity {
 
         binding.btnWhattsap.setOnClickListener(v ->
         {
-            Intent intentWhatsapp = new Intent(Intent.ACTION_VIEW, Uri.parse("https://api.whatsapp.com/send?phone=+56933855169"));
+            Intent intentWhatsapp = new Intent(Intent.ACTION_DIAL, Uri.parse("https://api.whatsapp.com/send?phone=+56933855169"));
             startActivity(intentWhatsapp);
+        });
+
+        binding.btnCall.setOnClickListener(v ->
+        {
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:+56933855169"));
+            startActivity(intent);
+
         });
 
         binding.btnEmail.setOnClickListener(v -> sendEmail());
@@ -41,12 +46,12 @@ public class MisRedesActivity extends AppCompatActivity {
         String[] CC = {""};
         Intent emailIntent = new Intent(Intent.ACTION_SEND);
 
-        emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.setType("text/plain");
+        emailIntent.setData(Uri.parse("mailto:"));
         emailIntent.putExtra(Intent.EXTRA_EMAIL, TO);
         emailIntent.putExtra(Intent.EXTRA_CC, CC);
         emailIntent.putExtra(Intent.EXTRA_SUBJECT, "Contacto desde mi app");
-        emailIntent.putExtra(Intent.EXTRA_TEXT, "Hola me podrias explicar lo siguiente....");
+        emailIntent.putExtra(Intent.EXTRA_TEXT, binding.etvEmailBody.getText());
 
         startActivity(Intent.createChooser(emailIntent, "Enviando..."));
         finish();
